@@ -40,12 +40,6 @@ class Village extends Model
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * Get all of the tasks for the user.
-     */
-    public function army()
-    {
-        return $this->hasOne(Army::class);
-    }
+
 
 }

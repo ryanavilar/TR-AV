@@ -13,7 +13,7 @@ class Army extends Model
      * @var array
      */
     protected $fillable = [
-        'archer', 'swordsman', 'horseman', 
+        'archer', 'swordsman', 'horseman', 'archerLv','swordsmanLv','horsemanLv','user_id'
     ];
 
     /**
@@ -22,21 +22,21 @@ class Army extends Model
      * @var array
      */
     protected $casts = [
-        'barrackLv' => 'int',
-        'warehouseLv' => 'int',
-        'hallLv' => 'int',
-        'Wood' => 'int',
-        'Soil' => 'int',
-        'Stone' => 'int',
-        'Wheat' => 'int',
+        'archer' => 'int',
+        'swordsman' => 'int',
+        'horseman' => 'int',
+        'archerLv' => 'int',
+        'swordsmanLv' => 'int',
+        'horsemanLv' => 'int',
+        'user_id'=>'int',
     ];
 
     /**
      * Get all of the tasks for the user.
      */
-    public function village()
+    public function user()
     {
-        return $this->belongsTo(Village::class);
+        return $this->belongsTo(User::class);
     }
 
 

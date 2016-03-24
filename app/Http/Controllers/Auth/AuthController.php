@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Village;
+use App\Army;
 
 use Validator;
 use App\Http\Controllers\Controller;
@@ -78,10 +79,24 @@ class AuthController extends Controller
             'barrackLv' => 1,
             'warehouseLv' => 1,
             'hallLv' => 1,
+            'lumberLv' =>1,
+            'wheatLv' => 1,
+            'quarryLv' => 1,
+            'soilLv' => 1,
             'Wood' => 500,
             'Stone' => 500,
             'Soil' => 500,
             'Wheat' => 500,
+            'user_id' => $json->id,
+        ]);
+
+        $army = Army::create([
+            'archer' => 0,
+            'swordsman' => 0,
+            'horseman' => 0,
+            'archerLv' => 0,
+            'swordsmanLv' => 0,
+            'horsemanLv' => 0,
             'user_id' => $json->id,
         ]);
         //print_r($village);

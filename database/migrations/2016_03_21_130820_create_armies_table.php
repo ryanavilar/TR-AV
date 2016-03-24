@@ -17,7 +17,10 @@ class CreateArmiesTable extends Migration
             $table->integer('archer');
             $table->integer('swordsman');
             $table->integer('horseman');
-            $table->integer('village_id')->index();
+            $table->integer('archerLv');
+            $table->integer('swordsmanLv');
+            $table->integer('horsemanLv');
+            $table->integer('user_id')->index();
             $table->timestamps();
         });
     }

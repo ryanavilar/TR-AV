@@ -29,7 +29,7 @@
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-inverse navbar-static-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -66,7 +66,7 @@
                 @else
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        {{ Auth::user()->name }} <span class="caret"></span>
+                        Hello, <strong>{{ Auth::user()->name }}</strong> <span class="caret"></span>
                     </a>
 
                     <ul class="dropdown-menu" role="menu">
@@ -79,11 +79,14 @@
     </div>
 </nav>
 
-@yield('content')
+
 
 <!-- JavaScripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+@yield('content')
+
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 @if (!Auth::guest())
 <script type="text/javascript">

@@ -30,6 +30,12 @@ Route::group(['middleware' => ['web']], function () {
     })->middleware('guest');
 
     Route::get('/main', 'VillageController@index');
+    Route::get('/army', 'ArmyController@index');
+    
+    Route::post('/armyLvlUp', 'ArmyController@levelup');
+    Route::post('/recruit', 'ArmyController@recruit');
+    Route::post('/lvlup', 'VillageController@levelup');
+    Route::post('/change', 'VillageController@changeName');
 
     Route::auth();
 
