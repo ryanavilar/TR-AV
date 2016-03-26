@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <p class="pull-right" id="clock">Time</p>
             <ul class="resources">
-                <li> <img src="{{ asset('img/wood-icon.png') }}"/> <strong> Wood : </strong> {{ $village->Wood }}/<strong>{{$village->warehouseLv*500 }}</strong> </li>
+                <li> <img src="{{ asset('img/Wood-icon.png') }}"/> <strong> Wood : </strong> {{ $village->Wood }}/<strong>{{$village->warehouseLv*500 }}</strong> </li>
                 <li> <img src="{{ asset('img/stone-icon.png') }}"/> <strong> Stone : </strong> {{ $village->Stone }}/<strong>{{$village->warehouseLv*500 }}</strong></li>
                 <li> <img src="{{ asset('img/soil-icon.png') }}"/> <strong> Soil : </strong>{{ $village->Soil }}/ <strong>{{$village->warehouseLv*500 }}</strong></li>
                 <li> <img src="{{ asset('img/wheat-icon.png') }}"/> <strong> Wheat : </strong>{{ $village->Wheat }}/<strong>{{$village->warehouseLv*500 }}</strong></li>
@@ -43,7 +43,7 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="type" value="hall" />
                         <button class="btn btn-sm btn-default">Upgrade for
-                            <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$upPrice['hall']['wood'] }}
+                            <img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/>{{$upPrice['hall']['wood'] }}
                             <img id="icon-sm" src="{{ asset('img/stone-icon.png') }}"/>{{$upPrice['hall']['stone'] }}
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$upPrice['hall']['soil'] }}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$upPrice['hall']['wheat'] }}
@@ -68,7 +68,7 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="type" value="warehouse" />
                         <button class="btn btn-sm btn-default">Upgrade for
-                            <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$upPrice['warehouse']['wood'] }}
+                            <img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/>{{$upPrice['warehouse']['wood'] }}
                             <img id="icon-sm" src="{{ asset('img/stone-icon.png') }}"/>{{$upPrice['warehouse']['stone'] }}
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$upPrice['warehouse']['soil'] }}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$upPrice['warehouse']['wheat'] }}
@@ -98,7 +98,7 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="type" value="barrack" />
                         <button class="btn btn-sm btn-default">Upgrade for
-                            <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$upPrice['barrack']['wood'] }}
+                            <img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/>{{$upPrice['barrack']['wood'] }}
                             <img id="icon-sm" src="{{ asset('img/stone-icon.png') }}"/>{{$upPrice['barrack']['stone'] }}
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$upPrice['barrack']['soil'] }}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$upPrice['barrack']['wheat'] }}
@@ -118,7 +118,7 @@
                 </div> 
                 <div class="media-body"> 
                     <h4 class="media-heading"><strong> Lumber Mill | Lv {{ $village->lumberLv }}</strong></h4> 
-                    <h5><img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/> {{ 350 + ($village->lumberLv)*150 }} / hour</h5>
+                    <h5><img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/> {{ 350 + ($village->lumberLv)*150 }} / hour</h5>
                     <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p> 
                     <a href="#" id="Lumber Mill" data-toggle="modal" data-target="#DetailsModal" class="floatleft details btn btn-sm btn-default">Details</a>
 
@@ -127,7 +127,7 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="type" value="lumber" />
                         <button type="submit" class="btn btn-sm btn-default">Upgrade for
-                            <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$upPrice['lumber']['wood'] }}
+                            <img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/>{{$upPrice['lumber']['wood'] }}
                             <img id="icon-sm" src="{{ asset('img/stone-icon.png') }}"/>{{$upPrice['lumber']['stone'] }}
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$upPrice['lumber']['soil'] }}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$upPrice['lumber']['wheat'] }}
@@ -156,7 +156,7 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="type" value="quarry" />
                         <button class="btn btn-sm btn-default">Upgrade for
-                            <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$upPrice['quarry']['wood'] }}
+                            <img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/>{{$upPrice['quarry']['wood'] }}
                             <img id="icon-sm" src="{{ asset('img/stone-icon.png') }}"/>{{$upPrice['quarry']['stone'] }}
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$upPrice['quarry']['soil'] }}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$upPrice['quarry']['wheat'] }}
@@ -176,7 +176,7 @@
                 </div> 
                 <div class="media-body"> 
                     <h4 class="media-heading"><strong> Soil Source | Lv {{ $village->soilLv }}</strong></h4> 
-                    <h5><img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/> {{ 350 + ($village->soilLv)*150 }} / hour</h5>
+                    <h5><img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/> {{ 350 + ($village->soilLv)*150 }} / hour</h5>
                     <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p> 
                     <a href="#" id="Soil Source" data-toggle="modal" data-target="#DetailsModal" class="floatleft details btn btn-sm btn-default">Details</a>
 
@@ -185,7 +185,7 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="type" value="soil" />
                         <button class="btn btn-sm btn-default">Upgrade for
-                            <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$upPrice['soil']['wood'] }}
+                            <img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/>{{$upPrice['soil']['wood'] }}
                             <img id="icon-sm" src="{{ asset('img/stone-icon.png') }}"/>{{$upPrice['soil']['stone'] }}
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$upPrice['soil']['soil'] }}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$upPrice['soil']['wheat'] }}
@@ -205,7 +205,7 @@
                 </div> 
                 <div class="media-body"> 
                     <h4 class="media-heading"><strong> Wheat Field | Lv {{ $village->wheatLv }}</strong></h4> 
-                    <h5><img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/> {{ 350 + ($village->wheatLv)*150 }} / hour</h5>
+                    <h5><img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/> {{ 350 + ($village->wheatLv)*150 }} / hour</h5>
                     <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p> 
                     <a href="#" id="Wheat Field" data-toggle="modal" data-target="#DetailsModal" class="floatleft details btn btn-sm btn-default">Details</a>
 
@@ -214,7 +214,7 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="type" value="wheat" />
                         <button class="btn btn-sm btn-default">Upgrade for
-                            <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$upPrice['wheat']['wood'] }}
+                            <img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/>{{$upPrice['wheat']['wood'] }}
                             <img id="icon-sm" src="{{ asset('img/stone-icon.png') }}"/>{{$upPrice['wheat']['stone'] }}
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$upPrice['wheat']['soil'] }}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$upPrice['wheat']['wheat'] }}
@@ -340,7 +340,7 @@ var hold;
             stone = "{{$upPrice['lumber']['stone'] }}";
             soil = "{{$upPrice['lumber']['soil'] }}";
             wheat = "{{$upPrice['lumber']['wheat'] }}";
-            effects = '<img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/> Wood increase per hour become : {{ 350 + ($village->lumberLv+1)*150 }}';
+            effects = '<img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/> Wood increase per hour become : {{ 350 + ($village->lumberLv+1)*150 }}';
             break;
 
 
@@ -377,7 +377,7 @@ var hold;
             break;
         }
 
-        var need = '<li> <img src="{{ asset('img/wood-icon.png') }}"/> <strong> Wood : </strong> '+ wood +' </li>'          +'<li> <img src="{{ asset('img/stone-icon.png') }}"/> <strong> Stone : </strong> '+ stone +'</li>'
+        var need = '<li> <img src="{{ asset('img/Wood-icon.png') }}"/> <strong> Wood : </strong> '+ wood +' </li>'          +'<li> <img src="{{ asset('img/stone-icon.png') }}"/> <strong> Stone : </strong> '+ stone +'</li>'
         +'<li> <img src="{{ asset('img/soil-icon.png') }}"/> <strong> Soil : </strong>'+soil+'</li>'
         +'<li> <img src="{{ asset('img/wheat-icon.png') }}"/> <strong> Wheat : </strong>'+wheat+'</li>';
         $('#need').html(need);
