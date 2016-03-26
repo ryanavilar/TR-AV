@@ -54,6 +54,7 @@ return [
             'database' => database_path('database.sqlite'),
             'prefix' => '',
         ],
+        /* HEROKU 
         'mysql' => [
             'driver' => 'mysql',
             'host' => $url["host"],
@@ -65,8 +66,8 @@ return [
             'prefix' => '',
             'strict' => false,
             'engine' => null,
-        ],
-        /*
+        ],*/
+        /* LOCAL */
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
@@ -79,7 +80,7 @@ return [
             'prefix' => '',
             'strict' => false,
             'engine' => null,
-        ],*/
+        ],
 
         'pgsql' => [
             'driver' => 'pgsql',
