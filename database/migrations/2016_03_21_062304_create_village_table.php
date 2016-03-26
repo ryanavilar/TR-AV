@@ -26,6 +26,8 @@ class CreateVillageTable extends Migration
             $table->integer('Stone');
             $table->integer('Soil');
             $table->integer('Wheat');
+            $table->integer('isOverlord');
+            $table->integer('location')->unique();
             $table->integer('user_id')->index();
             $table->timestamps();
         });

@@ -74,8 +74,21 @@ class AuthController extends Controller
 
         $json = json_encode($user);
         $json = json_decode($json);
-        
+
+
+        $number = rand(1,25);
+        $locationNotFound = true;
+        while($locationNotFound){
+            $villageFound = Village::where('location', $number)->get();
+            if($villageFound->isEmpty()){
+                $locationNotFound = false;
+            }else{
+                 $number = rand(1,25);
+            }
+        }
+
         $village = Village::create([
+            'villageName' => 'Your'.$number,
             'barrackLv' => 1,
             'warehouseLv' => 1,
             'hallLv' => 1,
@@ -88,6 +101,7 @@ class AuthController extends Controller
             'Soil' => 500,
             'Wheat' => 500,
             'user_id' => $json->id,
+            'location' => $number,
         ]);
 
         $army = Army::create([
@@ -101,6 +115,7 @@ class AuthController extends Controller
         ]);
         //print_r($village);
         //print_r($json->id);
+        //print_r($user);
         return $user;
     }
 }

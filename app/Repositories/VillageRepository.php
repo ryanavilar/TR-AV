@@ -19,6 +19,11 @@ class VillageRepository
         return Village::where('user_id', $user->id)->first();
     }
 
+    public function allVillage()
+    {
+        return Village::all();
+    }
+
     public function changeName(User $user,$name){
         $village = Village::where('user_id', $user->id)->first();
         $village->villageName = $name;
@@ -36,6 +41,9 @@ class VillageRepository
                 $village->Stone -= $upgradePrice['hall']['stone'];
                 $village->Soil -= $upgradePrice['hall']['soil'];
                 $village->Wheat -= $upgradePrice['hall']['wheat'];
+                if($village->hallLv > 100){
+                    $village->isOverlord = 1;
+                }
                 $village->save();
                 break;
                 case 'lumber':

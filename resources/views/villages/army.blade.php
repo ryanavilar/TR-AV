@@ -44,6 +44,8 @@
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$data['upgradePrice']['swordsman']['wheat']}}
                     </p>
 
+
+                    @if ($army->swordsmanLv > 0)
                     <h5><b><u>Recruit For </u></b></h5>
                     <p>
                             <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$data['status']['swordsman']['recruit']['wood']}}
@@ -51,10 +53,11 @@
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$data['status']['swordsman']['recruit']['soil']}}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$data['status']['swordsman']['recruit']['wheat']}}
                     </p>
+                    @endif
 
                     <h5 class="pull-right"><img class="status"src="{{ asset('img/atk-icon.png') }}"> {{$army->swordsman*$data['status']['swordsman']['attack']}} <img class="status" src="{{ asset('img/def.png') }}"> {{$army->swordsman*$data['status']['swordsman']['defence']}}</h5>
                     
-                    <a href="#" class="inline-please btn btn-primary" role="button">Details</a> 
+                    <a href="#" id="swordsman"class="details inline-please btn btn-primary" role="button" data-toggle="modal" data-target="#DetailsModal">Details</a> 
 
                     @if ($village->barrackLv > $army->swordsmanLv )
                     <form action="/armyLvlUp" method="POST" class="inline-please">
@@ -66,12 +69,16 @@
                     <button type="submit" class="btn btn-disabled inline-please" role="button" data-toggle="tooltip" data-placement="bottom" title="Upgrade Barrack to Train More">Train</button>
                     @endif
 
-
+                    @if ($army->swordsmanLv > 0)
                     <form action="/recruit" method="POST" class="inline-please">
                     {{ csrf_field() }}
                         <input type="hidden" name="type" value="swordsman" />
                     <button type="submit" class="btn btn-default" role="button">Recruit</button>
                     </form>
+                    @else
+                    <button type="submit" class="btn btn-disabled inline-please" role="button" data-toggle="tooltip" data-placement="bottom" title="Train Swordsman First">Recruit</button>
+                    @endif
+
                 </div>
             </div>
         </div>
@@ -98,6 +105,8 @@
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$data['upgradePrice']['archer']['wheat']}}
                     </p>
 
+
+                    @if ($army->archerLv > 0)
                     <h5><b><u>Recruit For </u></b></h5>
                     <p>
                             <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$data['status']['archer']['recruit']['wood']}}
@@ -105,10 +114,11 @@
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$data['status']['archer']['recruit']['soil']}}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$data['status']['archer']['recruit']['wheat']}}
                     </p>
+                    @endif
                     
                     <h5 class="pull-right"><img class="status"src="{{ asset('img/atk-icon.png') }}"> {{$army->archer*$data['status']['archer']['attack']}} <img class="status" src="{{ asset('img/def.png') }}"> {{$army->archer*$data['status']['archer']['defence']}}</h5>
                     
-                    <a href="#" class="inline-please btn btn-primary" role="button">Details</a> 
+                    <a href="#" id="archer" class="details inline-please btn btn-primary" role="button" data-toggle="modal" data-target="#DetailsModal">Details</a> 
 
 
                     @if ($village->barrackLv > $army->archerLv )
@@ -121,11 +131,15 @@
                     <button type="submit" class="btn btn-disabled inline-please" role="button" data-toggle="tooltip" data-placement="bottom" title="Upgrade Barrack to Train More">Train</button>
                     @endif
 
+                    @if ($army->archerLv > 0)
                     <form action="/recruit" method="POST" class="inline-please">
                     {{ csrf_field() }}
                         <input type="hidden" name="type" value="archer" />
                     <button type="submit" class="btn btn-default" role="button">Recruit</button>
                     </form>
+                    @else
+                    <button type="submit" class="btn btn-disabled inline-please" role="button" data-toggle="tooltip" data-placement="bottom" title="Train Archer First">Recruit</button>
+                    @endif
 
                 </div>
             </div>
@@ -153,6 +167,8 @@
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$data['upgradePrice']['horseman']['wheat']}}
                     </p>
 
+
+                    @if ($army->horsemanLv > 0)
                     <h5><b><u>Recruit For </u></b></h5>
                     <p>
                             <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$data['status']['horseman']['recruit']['wood']}}
@@ -160,9 +176,11 @@
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$data['status']['horseman']['recruit']['soil']}}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$data['status']['horseman']['recruit']['wheat']}}
                     </p>
+                    @endif
+
                     <h5 class="pull-right"><img class="status"src="{{ asset('img/atk-icon.png') }}"> {{$army->horseman*$data['status']['horseman']['attack']}} <img class="status" src="{{ asset('img/def.png') }}"> {{$army->horseman*$data['status']['horseman']['defence']}}</h5>
                     
-                    <a href="#" class="inline-please btn btn-primary" role="button">Details</a> 
+                    <a href="#" id="horseman" class="inline-please details btn btn-primary" role="button" data-toggle="modal" data-target="#DetailsModal">Details</a> 
 
 
                     @if ($village->barrackLv > $army->horsemanLv )
@@ -175,20 +193,63 @@
                     <button type="submit" class="btn btn-disabled inline-please" role="button" data-toggle="tooltip" data-placement="bottom" title="Upgrade Barrack to Train More">Train</button>
                     @endif
 
+
+                    @if ($army->horsemanLv > 0)
                     <form action="/recruit" method="POST" class="inline-please">
                     {{ csrf_field() }}
                         <input type="hidden" name="type" value="horseman" />
                     <button type="submit" class="btn btn-default" role="button">Recruit</button>
                     </form>
+                    @else
+                    <button type="submit" class="btn btn-disabled inline-please" role="button" data-toggle="tooltip" data-placement="bottom" title="Train Horseman First">Recruit</button>
+                    @endif
                 </div>
             </div>
         </div>
     </div><!-- row -->
 
     <hr>
+</div>
+</div>
+</div>
 
-              
+<!-- Modal -->
+<div class="modal fade" id="DetailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Details Army</h4>
+    </div>
+    <div class="modal-body">
+        <img id="img-details">
+        <h3 id="heading-details"> </h3>
+        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p> 
 
+        <h4><u>Status</u> :</h4>
+        <p id="statusModal">
+        </p> 
+
+        <h4><u>Total Power :</u> :</h4>
+        <p id="power">
+        </p> 
+
+        <h4><u>Next Upgrade Effects</u> :</h4>
+        <p id="effects">
+        </p> 
+
+        <h4><u>To Recruit More</u> :</h4>
+        <ul id="recneed" class="resources">
+        </ul>
+
+        <h4><u>Upgrade Requirements</u> :</h4>
+        <ul id="need" class="resources">
+        </ul>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
 </div>
 </div>
 </div>
@@ -198,6 +259,84 @@
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
+     $('.details').click(function(){
+        var id = $(this).attr('id');
+        var str;
+        var img;
+        var wood,stone,soil,wheat;
+        var woodUp,stoneUp,soilUp,wheatUp;
+        var effects,status,power;
+        switch(id){
+            case 'swordsman':
+            str = " Lv {{ $army->swordsmanLv }}";
+            id="Swordsman";
+            img = "{{ asset('img/swordsman.jpg') }}";
+            wood = "{{$data['status']['swordsman']['recruit']['wood'] }}";
+            stone = "{{$data['status']['swordsman']['recruit']['stone'] }}";
+            soil = "{{$data['status']['swordsman']['recruit']['soil'] }}";
+            wheat = "{{$data['status']['swordsman']['recruit']['wheat'] }}";
+            woodUp = "{{$data['upgradePrice']['swordsman']['wood'] }}";
+            stoneUp = "{{$data['upgradePrice']['swordsman']['stone'] }}";
+            soilUp = "{{$data['upgradePrice']['swordsman']['soil'] }}";
+            wheatUp = "{{$data['upgradePrice']['swordsman']['wheat'] }}";
+            status = '<img class="status"src="{{ asset("img/atk-icon.png") }}"> {{$data["status"]["swordsman"]["attack"]}} <img class="status" src="{{ asset("img/def.png") }}"> {{$data["status"]["swordsman"]["defence"]}} <span class="badge">{{$army->swordsman}} {{($army->swordsman == 1)?"Unit":"Units"}}</span>';
+            power = '<img class="status"src="{{ asset("img/atk-icon.png") }}"> {{$army->swordsman*$data["status"]["swordsman"]["attack"]}} <img class="status" src="{{ asset("img/def.png") }}"> {{$army->swordsman*$data["status"]["swordsman"]["defence"]}}';
+            effects = '<img class="status"src="{{ asset("img/atk-icon.png") }}"> {{$data["status"]["swordsman"]["nattack"]}} <img class="status" src="{{ asset("img/def.png") }}"> {{$data["status"]["swordsman"]["ndefence"]}}';
+            break;
+
+            case 'archer':
+            str = " Lv {{ $army->archerLv }}";
+            id="Archer";
+            img = "{{ asset('img/archer.jpg') }}"
+            wood = "{{$data['status']['archer']['recruit']['wood'] }}";
+            stone = "{{$data['status']['archer']['recruit']['stone'] }}";
+            soil = "{{$data['status']['archer']['recruit']['soil'] }}";
+            wheat = "{{$data['status']['archer']['recruit']['wheat'] }}";
+            woodUp = "{{$data['upgradePrice']['archer']['wood'] }}";
+            stoneUp = "{{$data['upgradePrice']['archer']['stone'] }}";
+            soilUp = "{{$data['upgradePrice']['archer']['soil'] }}";
+            wheatUp = "{{$data['upgradePrice']['archer']['wheat'] }}";
+            effects = '<img class="status"src="{{ asset("img/atk-icon.png") }}"> {{$data["status"]["archer"]["nattack"]}} <img class="status" src="{{ asset("img/def.png") }}"> {{$data["status"]["archer"]["ndefence"]}}  ';
+            status = '<img class="status"src="{{ asset("img/atk-icon.png") }}"> {{$data["status"]["archer"]["attack"]}} <img class="status" src="{{ asset("img/def.png") }}"> {{$data["status"]["archer"]["defence"]}}  <span class="badge">{{$army->archer}} {{($army->archer == 1)?"Unit":"Units"}}</span>';
+            power = '<img class="status"src="{{ asset("img/atk-icon.png") }}"> {{$army->archer*$data["status"]["archer"]["attack"]}} <img class="status" src="{{ asset("img/def.png") }}"> {{$army->archer*$data["status"]["archer"]["defence"]}}';
+            break;
+
+
+            case 'horseman':
+            str = " Lv {{ $army->horsemanLv }}";
+            id="Horseman";
+            img = "{{ asset('img/horseman.jpg') }}";
+            wood = "{{$data['status']['horseman']['recruit']['wood'] }}";
+            stone = "{{$data['status']['horseman']['recruit']['stone'] }}";
+            soil = "{{$data['status']['horseman']['recruit']['soil'] }}";
+            wheat = "{{$data['status']['horseman']['recruit']['wheat'] }}";
+            woodUp = "{{$data['upgradePrice']['horseman']['wood'] }}";
+            stoneUp = "{{$data['upgradePrice']['horseman']['stone'] }}";
+            soilUp = "{{$data['upgradePrice']['horseman']['soil'] }}";
+            wheatUp = "{{$data['upgradePrice']['horseman']['wheat'] }}";
+            effects = '<img class="status"src="{{ asset("img/atk-icon.png") }}"> {{$data["status"]["horseman"]["nattack"]}} <img class="status" src="{{ asset("img/def.png") }}"> {{$data["status"]["horseman"]["ndefence"]}}';
+            status = '<img class="status"src="{{ asset("img/atk-icon.png") }}"> {{$data["status"]["horseman"]["attack"]}} <img class="status" src="{{ asset("img/def.png") }}"> {{$data["status"]["horseman"]["defence"]}} <span class="badge">{{$army->horseman}} {{($army->horseman == 1)?"Unit":"Units"}}</span>';
+            power = '<img class="status"src="{{ asset("img/atk-icon.png") }}"> {{$army->horseman*$data["status"]["horseman"]["attack"]}} <img class="status" src="{{ asset("img/def.png") }}"> {{$army->horseman*$data["status"]["horseman"]["defence"]}}';
+            break;
+        }
+
+        var need = '<li> <img src="{{ asset('img/wood-icon.png') }}"/> <strong> Wood : </strong> '+ wood +' </li>'          +'<li> <img src="{{ asset('img/stone-icon.png') }}"/> <strong> Stone : </strong> '+ stone +'</li>'
+        +'<li> <img src="{{ asset('img/soil-icon.png') }}"/> <strong> Soil : </strong>'+soil+'</li>'
+        +'<li> <img src="{{ asset('img/wheat-icon.png') }}"/> <strong> Wheat : </strong>'+wheat+'</li>';
+        var needUp = '<li> <img src="{{ asset('img/wood-icon.png') }}"/> <strong> Wood : </strong> '+ woodUp +' </li>'          +'<li> <img src="{{ asset('img/stone-icon.png') }}"/> <strong> Stone : </strong> '+ stoneUp +'</li>'
+        +'<li> <img src="{{ asset('img/soil-icon.png') }}"/> <strong> Soil : </strong>'+soilUp+'</li>'
+        +'<li> <img src="{{ asset('img/wheat-icon.png') }}"/> <strong> Wheat : </strong>'+wheatUp+'</li>';
+        $('#need').html(needUp);
+        $('#recneed').html(need);
+        $('#effects').html(effects);
+        $('#power').html(power);
+        $('#statusModal').html(status);
+        $('#heading-details').html(id+" <small>"+ str + " </small>");
+        $('#img-details').attr("src",img);
+    });
+
+
     var now = new Date(<?php echo time() * 1000 ?>);
     function startInterval(){  
         setInterval('updateTime();', 1000);  

@@ -50,6 +50,29 @@ class ArmyController extends Controller
         ])->with('data', $parseArray);
     }
 
+     /**
+     * Get Army
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+     public function getArmy(Request $request, $id){
+        return $this->army->getArmy($id);
+     }
+
+
+     /**
+     * Attack Army
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+     public function attack(Request $request){
+        return view('villages.afterbattle',[
+                'index'=>0,
+            ])->with('battleStatus',$this->army->attack($request->user(),$request->id)); 
+     }
+
     /**
      * Upgrade Army
      *

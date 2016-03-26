@@ -14,7 +14,12 @@
             <div class="text-center">
                 <form action="/change" method="POST"> {{ csrf_field() }}
                 <div class="name">
-                <h2> {{ $village->villageName }} <small>Village</small> </h2></div>
+                @if($village->isOverlord == 1)
+                <h2> {{ $village->villageName }} <small>Kingdom</small> </h2>
+                @else
+                <h2> {{ $village->villageName }} <small>Village</small> </h2>
+                @endif
+                </div>
                 </form>
                 <a href="#" id="changeName" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i> Change Name</a>
             </div>
@@ -380,7 +385,7 @@ var hold;
         $('#heading-details').html(id+" <small>"+ str + " </small>");
         $('#img-details').attr("src",img);
         console.log(id);
-    })
+    });
 
 var now = new Date(<?php echo time() * 1000 ?>);
 function startInterval(){  

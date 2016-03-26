@@ -13,7 +13,7 @@ class Village extends Model
      * @var array
      */
     protected $fillable = [
-        'villageName', 'barrackLv', 'warehouseLv', 'hallLv','lumberLv','wheatLv','quarryLv','soilLv', 'Wood', 'Stone', 'Soil', 'Wheat','user_id'
+        'villageName', 'barrackLv', 'warehouseLv', 'hallLv','lumberLv','wheatLv','quarryLv','soilLv', 'Wood', 'Stone', 'Soil', 'Wheat','user_id','location',
     ];
 
     /**
@@ -30,6 +30,7 @@ class Village extends Model
         'Stone' => 'int',
         'Wheat' => 'int',
         'user_id'=>'int',
+        'location'=>'int',
     ];
 
     /**
