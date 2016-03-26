@@ -7,7 +7,7 @@
             <div class="topbar">
             <p class="pull-right" id="clock">Time</p>
             <ul class="resources">
-                <li> <img src="{{ asset('img/wood-icon.png') }}"/> <strong> Wood : </strong> {{ $village->Wood }}/<strong>{{$village->warehouseLv*500 }}</strong> </li>
+                <li> <img src="{{ asset('img/Wood-icon.png') }}"/> <strong> Wood : </strong> {{ $village->Wood }}/<strong>{{$village->warehouseLv*500 }}</strong> </li>
                 <li> <img src="{{ asset('img/stone-icon.png') }}"/> <strong> Stone : </strong> {{ $village->Stone }}/<strong>{{$village->warehouseLv*500 }}</strong></li>
                 <li> <img src="{{ asset('img/soil-icon.png') }}"/> <strong> Soil : </strong>{{ $village->Soil }}/ <strong>{{$village->warehouseLv*500 }}</strong></li>
                 <li> <img src="{{ asset('img/wheat-icon.png') }}"/> <strong> Wheat : </strong>{{ $village->Wheat }}/<strong>{{$village->warehouseLv*500 }}</strong></li>
@@ -38,7 +38,7 @@
 
                     <h5><b><u>To The Next Level </u></b></h5>
                     <p>
-                            <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$data['upgradePrice']['swordsman']['wood']}}
+                            <img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/>{{$data['upgradePrice']['swordsman']['wood']}}
                             <img id="icon-sm" src="{{ asset('img/stone-icon.png') }}"/>{{$data['upgradePrice']['swordsman']['stone']}}
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$data['upgradePrice']['swordsman']['soil']}}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$data['upgradePrice']['swordsman']['wheat']}}
@@ -48,7 +48,7 @@
                     @if ($army->swordsmanLv > 0)
                     <h5><b><u>Recruit For </u></b></h5>
                     <p>
-                            <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$data['status']['swordsman']['recruit']['wood']}}
+                            <img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/>{{$data['status']['swordsman']['recruit']['wood']}}
                             <img id="icon-sm" src="{{ asset('img/stone-icon.png') }}"/>{{$data['status']['swordsman']['recruit']['stone']}}
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$data['status']['swordsman']['recruit']['soil']}}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$data['status']['swordsman']['recruit']['wheat']}}
@@ -99,7 +99,7 @@
                     <h5><b><u>To The Next Level </u></b></h5>
                     <p>
                             
-                            <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$data['upgradePrice']['archer']['wood']}}
+                            <img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/>{{$data['upgradePrice']['archer']['wood']}}
                             <img id="icon-sm" src="{{ asset('img/stone-icon.png') }}"/>{{$data['upgradePrice']['archer']['stone']}}
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$data['upgradePrice']['archer']['soil']}}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$data['upgradePrice']['archer']['wheat']}}
@@ -109,7 +109,7 @@
                     @if ($army->archerLv > 0)
                     <h5><b><u>Recruit For </u></b></h5>
                     <p>
-                            <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$data['status']['archer']['recruit']['wood']}}
+                            <img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/>{{$data['status']['archer']['recruit']['wood']}}
                             <img id="icon-sm" src="{{ asset('img/stone-icon.png') }}"/>{{$data['status']['archer']['recruit']['stone']}}
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$data['status']['archer']['recruit']['soil']}}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$data['status']['archer']['recruit']['wheat']}}
@@ -161,7 +161,7 @@
                     
                     <h5><b><u>To The Next Level </u></b></h5>
                     <p>
-                            <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$data['upgradePrice']['horseman']['wood']}}
+                            <img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/>{{$data['upgradePrice']['horseman']['wood']}}
                             <img id="icon-sm" src="{{ asset('img/stone-icon.png') }}"/>{{$data['upgradePrice']['horseman']['stone']}}
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$data['upgradePrice']['horseman']['soil']}}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$data['upgradePrice']['horseman']['wheat']}}
@@ -171,7 +171,7 @@
                     @if ($army->horsemanLv > 0)
                     <h5><b><u>Recruit For </u></b></h5>
                     <p>
-                            <img id="icon-sm" src="{{ asset('img/wood-icon.png') }}"/>{{$data['status']['horseman']['recruit']['wood']}}
+                            <img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/>{{$data['status']['horseman']['recruit']['wood']}}
                             <img id="icon-sm" src="{{ asset('img/stone-icon.png') }}"/>{{$data['status']['horseman']['recruit']['stone']}}
                             <img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/>{{$data['status']['horseman']['recruit']['soil']}}
                             <img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/>{{$data['status']['horseman']['recruit']['wheat']}}
@@ -321,10 +321,10 @@ $(function () {
             break;
         }
 
-        var need = '<li> <img src="{{ asset('img/wood-icon.png') }}"/> <strong> Wood : </strong> '+ wood +' </li>'          +'<li> <img src="{{ asset('img/stone-icon.png') }}"/> <strong> Stone : </strong> '+ stone +'</li>'
+        var need = '<li> <img src="{{ asset('img/Wood-icon.png') }}"/> <strong> Wood : </strong> '+ wood +' </li>'          +'<li> <img src="{{ asset('img/stone-icon.png') }}"/> <strong> Stone : </strong> '+ stone +'</li>'
         +'<li> <img src="{{ asset('img/soil-icon.png') }}"/> <strong> Soil : </strong>'+soil+'</li>'
         +'<li> <img src="{{ asset('img/wheat-icon.png') }}"/> <strong> Wheat : </strong>'+wheat+'</li>';
-        var needUp = '<li> <img src="{{ asset('img/wood-icon.png') }}"/> <strong> Wood : </strong> '+ woodUp +' </li>'          +'<li> <img src="{{ asset('img/stone-icon.png') }}"/> <strong> Stone : </strong> '+ stoneUp +'</li>'
+        var needUp = '<li> <img src="{{ asset('img/Wood-icon.png') }}"/> <strong> Wood : </strong> '+ woodUp +' </li>'          +'<li> <img src="{{ asset('img/stone-icon.png') }}"/> <strong> Stone : </strong> '+ stoneUp +'</li>'
         +'<li> <img src="{{ asset('img/soil-icon.png') }}"/> <strong> Soil : </strong>'+soilUp+'</li>'
         +'<li> <img src="{{ asset('img/wheat-icon.png') }}"/> <strong> Wheat : </strong>'+wheatUp+'</li>';
         $('#need').html(needUp);
