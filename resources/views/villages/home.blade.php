@@ -176,7 +176,7 @@
                 </div> 
                 <div class="media-body"> 
                     <h4 class="media-heading"><strong> Soil Source | Lv {{ $village->soilLv }}</strong></h4> 
-                    <h5><img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/> {{ 350 + ($village->soilLv)*150 }} / hour</h5>
+                    <h5><img id="icon-sm" src="{{ asset('img/soil-icon.png') }}"/> {{ 350 + ($village->soilLv)*150 }} / hour</h5>
                     <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p> 
                     <a href="#" id="Soil Source" data-toggle="modal" data-target="#DetailsModal" class="floatleft details btn btn-sm btn-default">Details</a>
 
@@ -205,7 +205,7 @@
                 </div> 
                 <div class="media-body"> 
                     <h4 class="media-heading"><strong> Wheat Field | Lv {{ $village->wheatLv }}</strong></h4> 
-                    <h5><img id="icon-sm" src="{{ asset('img/Wood-icon.png') }}"/> {{ 350 + ($village->wheatLv)*150 }} / hour</h5>
+                    <h5><img id="icon-sm" src="{{ asset('img/wheat-icon.png') }}"/> {{ 350 + ($village->wheatLv)*150 }} / hour</h5>
                     <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p> 
                     <a href="#" id="Wheat Field" data-toggle="modal" data-target="#DetailsModal" class="floatleft details btn btn-sm btn-default">Details</a>
 
