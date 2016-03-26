@@ -1,5 +1,8 @@
 <?php
 
+
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
 return [
 
     /*
@@ -51,7 +54,19 @@ return [
             'database' => database_path('database.sqlite'),
             'prefix' => '',
         ],
-
+        'mysql' => [
+            'driver' => 'mysql',
+            'host' => $url["host"],
+            'database' => substr($url["path"], 1),
+            'username' => $url["user"],
+            'password' => $url["pass"],
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
+        /*
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
@@ -64,7 +79,7 @@ return [
             'prefix' => '',
             'strict' => false,
             'engine' => null,
-        ],
+        ],*/
 
         'pgsql' => [
             'driver' => 'pgsql',
